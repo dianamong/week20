@@ -49,7 +49,7 @@ let heroesJSON = `[{
 }
 ]`;
 
-document.addEventListener("DOMContentLoaded", function () {
+function showHeroes() {
   let heroes = JSON.parse(heroesJSON);
   let heroesContent = "";
   for (let hero of heroes) {
@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   document.querySelector(".superheroes").innerHTML = heroesContent;
   getFromLocalStorage();
-});
+}
 
 function rating() {
   let heroes = JSON.parse(heroesJSON);
@@ -99,3 +99,5 @@ function getFromLocalStorage() {
     }
   }
 }
+
+document.addEventListener("DOMContentLoaded", showHeroes);
